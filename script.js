@@ -49,12 +49,41 @@ document.addEventListener('click', (event) => {
         if (answer === answerS[8]) {
             let listQuestion = [];
             alert("La réponse finale est le premier caractère de chaque réponse !");
-            /*document.getElementsByClassName("question").style.visibility = "hidden";*/
             listQuestion = document.getElementsByClassName("question");
             for (let i = 0; i < listQuestion.length; i++) {
                 listQuestion[i].style.visibility = "hidden";
             };
             document.getElementById("subFinal").style.visibility = "visible";
+            checkFinalQuestion();
         };
     };
 });
+
+
+function checkFinalQuestion() {
+    document.addEventListener('click', (event) => {
+        if (button === "subFinal") {
+            answer = document.getElementById("finalAnswer").value;
+            if (answer === answerS[9]) {
+                //alert("bravo");
+                step2();
+                return;
+            }
+            else {
+                alert("Erreur, on recommence !");
+                location.reload(location.href);
+            }
+        };
+        checkFinalQuestion();
+    });
+};
+
+function step2() {
+    document.getElementById("para1").innerText = "Trouve le message caché !";
+    let delThis = document.getElementsByTagName("main");
+    delThis[0].replaceChildren();
+    let balise = document.createElement("p");
+    balise.innerText = "Tape le code 'YakuZa'";
+    delThis[0].append(balise);
+    
+}

@@ -12,6 +12,10 @@ main {
     background-color: rgb(0, 0, 0);
 }
 
+main p {
+    color: black;
+}
+
 .question {
     margin-top: 20px;
     margin-bottom: 20px;
@@ -32,6 +36,6 @@ main {
     visibility: hidden;
 }
 
-#q1 {
+#q1, #q9 {
     visibility: visible;
 }
