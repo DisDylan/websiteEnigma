@@ -36,6 +36,6 @@ main p {
     visibility: hidden;
 }
 
-#q1, #q9 {
+#q1 {
     visibility: visible;
 }
